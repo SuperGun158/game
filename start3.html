@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.text{
+			position: absolute;
+			color: white;
+			font-family: Arial;
+			font-size: 30px;
+			text-align: center;
+		}
+		img{
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<img src="gigi2.jpg">
+	<img src="billl.png">
+	<img src="hg.jpg">
+	<script type="text/javascript">
+		var img = document.querySelectorAll("img");
+		var text = document.createElement("p");
+		document.body.appendChild(text);
+		text.classList.add("text");
+		text.innerHTML = "Информация";
+		for(i = 0 ;i < img.length; i++){
+			img[i].onmouseenter = function(){
+				var gg = this.getBoundingClientRect()
+				text.style.top = gg.y + 50 + 'px';
+				text.style.left = gg.x + 50 + 'px';
+			}
+			img[i].onclick = function(){
+				document.location.href = "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0";
+			}
+		}
+	</script>
+</body>
+</html>

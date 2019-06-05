@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>ИГРА</title>
+</head>
+<body>
+	<div class="block">
+		<div class="chetr gg gg10">
+			<h3>
+			Шаги
+			</h3>
+		</div>
+		<div class="chetr yellow">
+			<h3>
+			Гиги за Шаги
+			</h3>
+		</div>
+		<div class="chetr red red2">
+			<h3>
+			Рубли за Гиги
+			</h3>
+		</div>
+		<div class="chetr blue red3">
+			<h3>
+			Майнравт за Рубли
+			</h3>
+		</div>
+		<div class="chetr yellow2">
+			<h3>
+			Чит Коды
+			</h3>
+		</div>
+	</div>
+</div>
+	<div class="block glock">
+			<button class="gagarin2">
+				
+			</button>
+	</div>
+	<div class="gigi">
+		<h3 class="text2">
+			Делай Шаги и получай Гиги!!!
+		</h3>
+		<button class="btn2">
+			Получить 1 гиг
+		</button>
+	</div>
+	<div class="gigi ggg">
+		<h3 class="text2 text21">
+			Довай Гиги я тебе Рубли!!!
+		</h3>
+		<button class="btn2 btn3">
+			Получить 10 руб
+		</button>
+	</div>
+	<div class="gigi ggg2">
+		<h3 class="text2 text22">
+			Майнкравт только для ИЗБРАННЫХ!!!
+		</h3>
+		<button class="btn2 btn4">
+			Получить Майнкравт
+		</button>
+	</div>
+	<div class="gigi hit">
+		<h3 class="text2 text23">
+			Читы чтобы быстро показать игру!!!
+		</h3>
+		<button class="btn2 btn5">
+			10000 шагов
+		</button>
+		<button class="btn2 btn6">
+			1 гиг
+		</button>
+		<button class="btn2 btn7">
+			1500 рублей
+		</button>
+	</div>
+	<script type="text/javascript">
+		let chet = document.querySelector('.chetr');
+		let gar = document.querySelector('.gagarin2');
+		let gg = document.querySelector('.gg');
+		let ggg = document.querySelector('.ggg');
+		let ggg2 = document.querySelector('.ggg2');
+		let hit = document.querySelector('.hit');
+		let gg2 = document.querySelector('.yellow');
+		let gg3 = document.querySelector('.red');
+		let gg4 = document.querySelector('.blue');
+		let gg5 = document.querySelector('.yellow2');
+		let gigi = document.querySelector('.gigi');
+		let block = document.querySelector('.glock');
+		let btn = document.querySelector('.btn2');
+		let btn2 = document.querySelector('.btn3');
+		let btn3 = document.querySelector('.btn4');
+		let btn4 = document.querySelector('.btn5');
+		let btn5 = document.querySelector('.btn6');
+		let btn6 = document.querySelector('.btn7');
+		let score = 0
+		let gigi2 = 0
+		let rub = 0
+		let text = document.createElement('h3');
+		document.body.appendChild(text)
+		text.classList.add('far')
+		let text3 = document.createElement('h3');
+		document.body.appendChild(text3)
+		text3.classList.add('far2')
+		let text4 = document.createElement('h3');
+		document.body.appendChild(text4)
+		text4.classList.add('far3')
+		let text2 = document.querySelector('.text2');
+		let text21 = document.querySelector('.text21');
+		let text22 = document.querySelector('.text22');
+		let text23 = document.querySelector('.text23');
+		gar.onclick = function(){
+			score++
+			text.innerHTML = "Шагов: " + score
+			if(score == 10000){
+				alert('Тебе хватает на 1 гигобайт')
+			}
+		}
+		gg2.onclick = function(){
+			gigi.style.display = 'block'
+			block.style.display = 'none'
+			ggg.style.display = 'none'
+			ggg2.style.display = 'none'
+			hit.style.display = 'none'
+			text2.innerHTML = "Делай Шаги и получай Гиги!!!"
+		}
+		gg3.onclick = function(){
+			gigi.style.display = 'none'
+			block.style.display = 'none'
+			ggg.style.display = 'block'
+			ggg2.style.display = 'none'
+			hit.style.display = 'none'
+			text21.innerHTML = "Довай Гиги я тебе Рубли!!!"
+		}
+		gg4.onclick = function(){
+			gigi.style.display = 'none'
+			block.style.display = 'none'
+			ggg.style.display = 'none'
+			ggg2.style.display = 'block'
+			hit.style.display = 'none'
+			text21.innerHTML = "Майнкравт только для ИЗБРАННЫХ!!!"
+		}
+		gg5.onclick = function(){
+			gigi.style.display = 'none'
+			block.style.display = 'none'
+			ggg.style.display = 'none'
+			ggg2.style.display = 'none'
+			hit.style.display = 'block'
+			
+		}
+		gg.onclick = function(){
+			gigi.style.display = 'none'
+			block.style.display = 'block'
+			ggg.style.display = 'none'
+			ggg2.style.display = 'none'
+			hit.style.display = 'none'
+		}
+		btn.onclick = function(){
+			if(score >= 10000){
+				gigi2++
+				score = score - 10000;
+				text.innerHTML = "Шагов: " + score
+				text2.innerHTML = "Ты приобрёл 1 гиг"
+				text3.innerHTML = "Гигов: " + gigi2
+			}
+			else{
+				text2.innerHTML = "Тебе не хватает на гиги"
+			}
+		}
+		btn2.onclick = function(){
+			if(gigi2 >= 1){
+				rub = rub + 10
+				gigi2 = gigi2 - 1;
+				text3.innerHTML = "Гигов: " + gigi2
+				text21.innerHTML = "Ты приобрёл 10 рублей"
+				text4.innerHTML = "Рублей: " + rub
+			}
+			else{
+				text21.innerHTML = "Тебе не хватает на рубли"
+			}
+		}
+		btn3.onclick = function(){
+			if(rub >= 1500){
+				alert('Ты купил Майнкравт')
+				document.location.href = "index.html";
+			}
+			else{
+				text22.innerHTML = "Тебе не хватает на Майнкравт"
+			}
+		}
+		btn4.onclick = function(){
+			score = score + 10000;
+			text.innerHTML = "Шагов: " + score
+		}
+		btn5.onclick = function(){
+			gigi2++;
+			text3.innerHTML = "Гигов: " + gigi2
+		}
+		btn6.onclick = function(){
+			rub = rub + 1500;
+			text4.innerHTML = "Рублей: " + rub
+		}
+	</script>
+</body>
+</html>
